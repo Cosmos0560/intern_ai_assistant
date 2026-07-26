@@ -109,7 +109,7 @@ python selftest.py
 ![GitHub info](screenshots/image%20copy%205.png)
 
 ### Crypto query (Bitcoin)
-![Bitcoin price](screenshots/image.png)
+![Bitcoin price](screenshots/image%20copy%203.png)
 
 
 
