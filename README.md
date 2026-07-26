@@ -96,5 +96,21 @@ fetches real data using the offline fallback.
 python selftest.py
 ```
 
+## Screenshots
+
+### Homepage
+![Homepage](screenshots/image.png)
+
+### Weather query (Tashkent)
+![Weather in Tashkent](screenshots/image_copy.png)
+
+### GitHub query
+![GitHub info](screenshots/image_copy_5.png)
+
+### Crypto query (Bitcoin)
+![Bitcoin price](screenshots/image.png)
+
+
+
 This routes a batch of questions and hits all three live APIs using the offline
 templates — a fast way to confirm everything is wired up.
