@@ -102,10 +102,11 @@ python selftest.py
 ![Homepage](screenshots/image.png)
 
 ### Weather query (Tashkent)
-![Weather in Tashkent](screenshots/image_copy.png)
+![Weather in Tashkent](screenshots/image%20copy.png)
+
 
 ### GitHub query
-![GitHub info](screenshots/image_copy_5.png)
+![GitHub info](screenshots/image%20copy%205.png)
 
 ### Crypto query (Bitcoin)
 ![Bitcoin price](screenshots/image.png)
