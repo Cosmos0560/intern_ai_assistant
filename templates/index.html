@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumen · Ask your data</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <div class="brand">
+        <span class="mark">◆</span>
+        <div>
+          <h1>AI Lumen assistant</h1>
+          <p class="tagline">Ask in plain English — answered from live data.</p>
+        </div>
+      </div>
+      <div class="pills">
+        <span class="pill {{ 'pill-live' if status.has_key else 'pill-offline' }}">
+          {{ 'Gemini · live' if status.has_key else 'Offline mode' }}
+        </span>
+        <span class="pill pill-count" id="callBadge" title="Gemini calls this session">
+          {{ status.gemini_calls }} calls
+        </span>
+      </div>
+    </header>
+
+    <section class="asker">
+      <form id="askForm" autocomplete="off">
+        <input id="q" name="q" type="text" placeholder="e.g. What is the weather in Paris?" />
+        <button id="ask" type="submit">Ask</button>
+      </form>
+      <div class="chips">
+        <button class="chip" type="button">What is the weather in Paris?</button>
+        <button class="chip" type="button">Show me information about GitHub.</button>
+        <button class="chip" type="button">Price of bitcoin</button>
+        <button class="chip" type="button">Weather in Tashkent</button>
+      </div>
+    </section>
+
+    <section id="result" class="result hidden" aria-live="polite">
+      <div class="answer-card">
+        <div class="answer-head">
+          <span id="sourceTag" class="tag">—</span>
+          <span id="modeTag" class="tag tag-mode">—</span>
+          <span id="cacheTag" class="tag tag-cache hidden">cached</span>
+        </div>
+        <p id="answer" class="answer-text"></p>
+      </div>
+
+      <details class="panel" id="tracePanel">
+        <summary>How I got this <span class="chev">›</span></summary>
+        <ol id="trace" class="timeline"></ol>
+      </details>
+
+      <details class="panel" id="rawPanel">
+        <summary>Raw data (JSON) <span class="chev">›</span></summary>
+        <pre id="raw" class="rawjson"></pre>
+      </details>
+    </section>
+
+    <div id="loading" class="loading hidden">
+      <span class="spinner"></span> Thinking through the pipeline…
+    </div>
+
+    <footer class="foot">
+       <span>AI Lumen assistant &middot; university assignment by <strong>Otabek Yakubov</strong></span>
+      <span class="foot-sources">weather · github · crypto</span>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

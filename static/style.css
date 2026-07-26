@@ -1,0 +1,225 @@
+:root {
+  --bg: #f4f5fb;
+  --card: #ffffff;
+  --ink: #1b1d2a;
+  --muted: #6b6f85;
+  --line: #e7e8f2;
+  --accent: #5b52e0;
+  --accent-2: #8a7bff;
+  --good: #12a071;
+  --warn: #d98324;
+  --shadow: 0 14px 40px rgba(38, 34, 96, 0.10);
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1100px 460px at 82% -8%, #ece9ff 0%, transparent 60%),
+    radial-gradient(900px 420px at -6% 4%, #e5f6f1 0%, transparent 55%),
+    var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 22px 60px;
+}
+
+/* ---- masthead ---- */
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.mark {
+  font-size: 34px;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.masthead h1 { margin: 0; font-size: 27px; letter-spacing: -0.5px; }
+.tagline { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+
+.pills { display: flex; gap: 8px; align-items: center; }
+.pill {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  white-space: nowrap;
+}
+.pill-live { color: var(--good); border-color: #bfe9d8; background: #eafaf3; }
+.pill-offline { color: var(--warn); border-color: #f2ddc0; background: #fdf3e6; }
+.pill-count { color: var(--muted); }
+
+/* ---- asker ---- */
+.asker { margin-bottom: 26px; }
+#askForm {
+  display: flex;
+  gap: 10px;
+  background: var(--card);
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+#q {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  padding: 12px 14px;
+  background: transparent;
+  color: var(--ink);
+}
+#ask {
+  border: 0;
+  padding: 0 24px;
+  border-radius: 11px;
+  font-size: 15px;
+  font-weight: 650;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  transition: transform .06s ease, filter .15s ease;
+}
+#ask:hover { filter: brightness(1.06); }
+#ask:active { transform: translateY(1px); }
+#ask:disabled { opacity: .55; cursor: default; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.chip {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.chip:hover { color: var(--accent); border-color: var(--accent-2); }
+
+/* ---- result ---- */
+.result { display: grid; gap: 14px; }
+.hidden { display: none !important; }
+
+.answer-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 22px 24px;
+  box-shadow: var(--shadow);
+}
+.answer-head { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 4px 10px;
+  border-radius: 7px;
+  background: #eef0fb;
+  color: var(--accent);
+}
+.tag-mode { background: #eef7f2; color: var(--good); }
+.tag-mode.is-offline { background: #fdf3e6; color: var(--warn); }
+.tag-cache { background: #f0eefc; color: #7a6ad6; }
+.answer-text { margin: 0; font-size: 18px; }
+
+/* ---- collapsible panels ---- */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.panel > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.panel > summary::-webkit-details-marker { display: none; }
+.chev { transition: transform .18s ease; color: var(--muted); }
+.panel[open] .chev { transform: rotate(90deg); }
+
+/* ---- timeline ---- */
+.timeline { list-style: none; margin: 0; padding: 4px 18px 18px; }
+.timeline li {
+  position: relative;
+  padding: 0 0 16px 26px;
+  border-left: 2px solid var(--line);
+}
+.timeline li:last-child { border-left-color: transparent; padding-bottom: 4px; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px #eae8fb;
+}
+.timeline li.k-http::before { background: #2f8fed; box-shadow: 0 0 0 3px #e4f0fc; }
+.timeline li.k-llm::before { background: #8a7bff; box-shadow: 0 0 0 3px #ede9ff; }
+.timeline li.k-fallback::before,
+.timeline li.k-notice::before { background: var(--warn); box-shadow: 0 0 0 3px #fbeed9; }
+.timeline li.k-cache::before { background: var(--good); box-shadow: 0 0 0 3px #dcf3ea; }
+.ti-title { font-weight: 600; font-size: 14px; }
+.ti-ms { color: var(--muted); font-weight: 500; font-size: 12px; margin-left: 6px; }
+.ti-detail { color: var(--muted); font-size: 13px; word-break: break-word; }
+
+.rawjson {
+  margin: 0;
+  padding: 16px 18px 20px;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  color: #33364a;
+  background: #fbfbfe;
+  overflow-x: auto;
+}
+
+/* ---- loading / footer ---- */
+.loading { display: flex; align-items: center; gap: 10px; color: var(--muted); padding: 8px 4px; }
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid var(--line);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+.foot-sources { text-transform: uppercase; letter-spacing: 1px; }

@@ -1,0 +1,57 @@
+========================================================
+  AI LUMEN Assistant — how to start it (no experience needed)
+========================================================
+
+You only need to do ONE thing.
+
+──────────────────────────────
+ON A MAC
+──────────────────────────────
+1. Open the "lumen" folder.
+2. Double-click the file called:   run.command
+3. The first time, a black window opens and works for about
+   a minute (it is installing things). Just wait.
+4. Your web browser opens automatically at the app.
+   If it does not, open your browser and go to:
+        http://127.0.0.1:5000
+5. To STOP the app: close that black window.
+
+   (If the Mac says "run.command cannot be opened because it
+    is from an unidentified developer", do this once:
+    right-click run.command  ->  Open  ->  Open.)
+
+──────────────────────────────
+ON WINDOWS
+──────────────────────────────
+1. Open the "lumen" folder.
+2. Double-click the file called:   run.bat
+3. The first time, a window works for about a minute
+   (installing things). Just wait.
+4. Your browser opens at the app. If not, open your browser
+   and go to:
+        http://127.0.0.1:5000
+5. To STOP the app: close that window.
+
+──────────────────────────────
+IF STEP 1 FAILS: install Python first
+──────────────────────────────
+You need "Python" installed once on the computer.
+  - Download it from:  https://www.python.org/downloads/
+  - Windows only: during install, TICK the box
+    "Add Python to PATH".
+Then double-click run.command / run.bat again.
+
+──────────────────────────────
+HOW TO USE THE APP
+──────────────────────────────
+Type a question in the box and press "Ask", or click one of
+the example buttons. Try:
+  - What is the weather in Paris?
+  - Show me information about GitHub.
+  - Price of bitcoin
+
+Click "How I got this" to see every step (great for the
+homework screenshots). Click "Raw data (JSON)" to see the
+real data that was fetched.
+
+That's it.
